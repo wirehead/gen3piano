@@ -1,12 +1,14 @@
 # gen3piano LED light board
 
-This is a constant current LED driver for 8 20mA LEDs with individual tactile button controls.  This is mostly useful for you if you are either tired of picking out a resistor to drive LEDs or if you are doing light painting photography.  Both of which apply to me.
+This is a constant current LED driver for 8 20mA LEDs with individual tactile button controls.  This is mostly useful for you if you are either tired of picking out a resistor to drive LEDs at their maximum safe brightness or if you are doing light painting photography.  Both of which apply to me.
+
+![Pic](pic.jpg)]
 
 ## First, a story...
 
 Many many years ago now, I had a friend over for my birthday and her husband, who's a semiconductor engineer, gave me some boards he picked up off a random workbench at the office.  Normally this is "Okay, I'm never inviting you over again!" but in their case, they knew I do lightpaintings and stuff and it turns out that, for all of the programmable intelligent whacky lighting things that exist on the marketplace, a little board with a set of LEDs and buttons was a great thing.
 
-I was doing a photoshoot the other day and right towards the end, the 9v battery clip had broken.  And I need to take all of my glow-sticks and figure out which ones are still working and do something there because they were all kinda questionable.  And I had an ancient board made on perfboard that used a header because perfboard-compatible switches are a little tricky to find and I'd left the jumper in place, so the batteries had leaked.
+Well, I was doing a photoshoot the other day and right towards the end, the 9v battery clip had broken.  And I need to take all of my glow-sticks and figure out which ones are still working and do something there because they were all kinda questionable.  And I had an ancient board made on perfboard that used a header because perfboard-compatible switches are a little tricky to find and I'd left the jumper in place, so the batteries had leaked.
 
 This brought a certain degree of panic.  Because "All of my lights are broken" is a really crappy way to end a shoot that's supposed to be two established artists doing a really cool collaboration.
 
@@ -36,27 +38,37 @@ In short, A UV LED will radiate a bunch of visible light that your eye can see. 
 
 And then your camera is going to read that as blue, plus whatever colors end up fluorescing.
 
+The same is otherwise true for different spectra.
+
 Also, because it's handy to have 8 little buttons while you are fumbling around in the dark.
 
 ## The design
 
 The goal was to fit within the 5cm x 5cm box necessary to get a PCB from DirtyPCB's.
 
-I used [KiCad](http://kicad-pcb.org/).
+I used [KiCad](http://kicad-pcb.org/).  It seems good enough, actually.
 
 ## BOM
 
  * 8x CL2N3-G (digikey part # CL2N3-G-ND)
- * 8x random 20mm LEDs, generally T 1 3/4 sized a.k.a. 5mm sized.
+ * 8x random 20mA LEDs, generally T 1 3/4 sized a.k.a. 5mm sized.
  * 8x 6mm tactile switches, vaguely Omron B3F-1000 shaped (digikey part # 450-1650-ND)
  * 1x Two terminal, 0.2" spacing terminal blocks, vaguely Molex 39880-030 shaped (Digikey part # ED2580-ND)
  * 1x ceramic 100nF capacitor.
  * 9v battery snaps or other useful power supply
- * This PCB.
+ * This PCB, which you can order via [DirtyPCB's](https://dirtypcbs.com/store/designer/details/wirehead/6309/gen3piano-f-cu-zip) if you so desire.  Or you can fab it yourself via a provider you want.
 
 ## Construction
 
-...to write at a later point...
+I'm not going to write a tutorial, but here's some pointers:
+
+ * The switches snap in.  And you don't really need to worry about top versus bottom, if they fit, they'll work.
+ * The CL2N3-G's should have their flat side matching the silkscreen.  Don't bother soldering the middle lead.
+ * The LEDs should have their flat size matching the silk screen.
+
+## Usage
+
+ * Strip the wires for your 9v battery snaps, insert them into the screw-terminals making sure to get the positive in the terminal marked on the silkscreen, and push the buttons.
 
 ## Suggested modifications using the same PCB
 
@@ -64,4 +76,4 @@ I used [KiCad](http://kicad-pcb.org/).
 
 ## License
 
-CC-BY-SA
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
